@@ -66,11 +66,11 @@ rsconnect/
 # *.rda
 
 # Plots and outputs
-*.png
-*.jpg
-*.jpeg
-*.pdf
-*.svg
+# *.png
+# *.jpg
+# *.jpeg
+# *.pdf
+# *.svg
 
 # macOS
 .DS_Store
