@@ -5,7 +5,7 @@ datasets. The visualisations cover a range of topics and languages, including R 
 
 ## Geospatial Visualisations
 
-####  1. Exploring London house prices and and average income by borough
+#### Exploring London house prices and and average income by borough
 
 These plots explore the relationship between average house prices and average income across different boroughs in 
 London. The visualisations use geospatial data to represent the variations in house prices and income levels 
@@ -18,7 +18,7 @@ time (the one to the left) and the other is a divergent color scale map plotting
 
 ## Sports Visualisations
 
-####  1. Stephen Curry shot chart
+#### Stephen Curry shot chart
 
 This shot chart visualizes the shooting performance of NBA player Stephen Curry during the 2024 season. The chart displays 
 the locations of his shots on the basketball court, with different colors indicating whether the shots were made or missed. 
