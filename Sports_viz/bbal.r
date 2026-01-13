@@ -1,13 +1,23 @@
-pacman::p_load(hoopR, skimr, tidyverse, sportyR, devtools)
-devtools::install_github("ys-xue/ggbasketball")
-library(ggbasketball)
+######################################
+## Author: Nils Indreiten           ##
+## Date: 2026-01-13                 ##
+## Description: This script         ##
+## explores NBA data using the API  ##
+## and creates a heatmap.           ##
+######################################
 
+# Load packages:
+# devtools::install_github("ys-xue/ggbasketball")
+pacman::p_load(hoopR, skimr, tidyverse, sportyR, devtools, ggbasketball, patchwork, magick)
+
+# Retrieve data:
 nba_team_box <- hoopR::load_nba_team_box(2024)
 
 # NBA player box data, 2022-2024 seasons:
 nba_player_box <- hoopR::load_nba_player_box(2025)
 
 # NBA play by play data, 2022-2024 seasons:
+
 nba_pbp <- hoopR::load_nba_pbp(2025) %>%
   filter(athlete_id_1 %in% c(3975, 1966), shooting_play == TRUE)
 
@@ -15,9 +25,9 @@ nba_pbp %>%
   select(athlete_id_1, coordinate_x_raw, coordinate_y_raw, scoring_play) %>%
   mutate(
     scoring_play = as.integer(scoring_play),
-    loc_x = coordinate_x_raw - 25, # Center x coordinate (convert 0-50 to -25 to 25)
+    loc_x = coordinate_x_raw - 25, 
     loc_y = coordinate_y_raw - 44
-  ) %>% # Keep y as is (already in feet)
+  ) %>% 
   select(
     athlete_id_1,
     loc_x,
@@ -25,16 +35,10 @@ nba_pbp %>%
     shot_made_flag = scoring_play
   ) -> curry_shots
 
-write.csv(
-  curry_shots,
-  "/Users/joka/Documents/JS/bbal_viz/src/data/curry_shots.csv",
-  row.names = FALSE
-)
-
 nba_pbp %>%
   skimr::skim()
 
-# Some visualisation:
+# Some visualisations:
 
 # simple shot chart
 ggshotchart(
@@ -43,35 +47,11 @@ ggshotchart(
   y = "loc_y",
   result = shot_made_flag
 )
-
-
 # Now with sports verse package:
 
 ggcourt(orientation = "wide")
 
 # Draw a regulation NBA basketball court
-# Heatmap showing shooting percentage by location
-geom_basketball("nba", rotation = 270) +
-  stat_summary_2d(
-    data = curry_shots |>
-      filter(athlete_id_1 == 1966),
-    aes(x = loc_x, y = loc_y, z = shot_made_flag),
-    fun = mean,
-    bins = 50,
-    alpha = 0.8
-  ) +
-  scale_fill_gradient2(
-    low = "#d73027",
-    mid = "#fee08b",
-    high = "#1a9850",
-    midpoint = 0.5,
-    name = "FG%",
-    labels = scales::percent,
-    limits = c(0, 1)
-  ) +
-  theme_void() +
-  theme(legend.position = "right")
-
 
 # Density plot:
 geom_basketball("nba", display_range = "offense", rotation = 270,
@@ -108,11 +88,33 @@ geom_basketball("nba", display_range = "offense", rotation = 270,
   ) +
   theme(legend.position = "none")
 
-# plotly::ggplotly(p)
-
 # Made not made:
 
-geom_basketball("nba", display_range = "offense", rotation = 270,
+# Download Curry image
+curry_img_url <- "https://cdn.nba.com/headshots/nba/latest/1040x760/201939.png"
+curry_img <- magick::image_read(curry_img_url) |>
+  magick::image_scale("200x200")
+
+# Create title area with text
+title_plot <- ggplot() +
+  annotate("text", x = 0.08, y = 0.6, label = "Steph Curry Shot Concentration", 
+           size = 6, fontface = "bold", hjust = 0) +
+  annotate("text", x = 0.08, y = 0.4, label = "2024 season", 
+           size = 4, hjust = 0) +
+  xlim(-0.1, 1) +
+  ylim(0, 1) +
+  theme_void()
+
+# Create image as grob
+img_grob <- grid::rasterGrob(curry_img, interpolate = TRUE)
+
+# Create image plot
+img_plot <- ggplot() + 
+  annotation_custom(img_grob, xmin = -Inf, xmax = Inf, ymin = -Inf, ymax = Inf) +
+  theme_void()
+
+# Create the main plot (without title)
+curry_plot <- geom_basketball("nba", display_range = "offense", rotation = 270,
                 color_updates = list(
                   plot_background = NULL,
                   defensive_half_court = "#ffffff",
@@ -142,14 +144,15 @@ geom_basketball("nba", display_range = "offense", rotation = 270,
     )
   ) +
   scale_alpha_continuous(range = c(0.1, 0.6), guide = "none") +
-  # labs(
-  #   title = "Steph Curry shot result concentration",
-  #   subtitle = "2024 season"
-#  ) +
   theme(
     legend.position = "bottom",
-    legend.box.margin = margin(t = -30, r = 0, b = 0, l = 0)
-    # plot.title = element_text(hjust = 0,vjust = 1.5, face = "bold", margin = margin(l = 32)),
-    # plot.subtitle = element_text(hjust = 0, margin = margin(l = 32))
+    legend.box.margin = margin(t = -90, r = 0, b = 0, l = 0)
   )
 
+# Combine title with image, then stack with main plot
+(title_plot + img_plot + plot_layout(widths = c(4, 3))) / curry_plot + 
+  plot_layout(heights = c(1, 8)) 
+
+#########
+## FIN ##
+#########
