@@ -1,16 +1,16 @@
-# Data Explorations
+# Data Visualisations
 
 This repository contains various data visualization projects. [Some of them are part of the TidyTuesday weekly challenges](https://github.com/rfordatascience/tidytuesday), while others are personal projects exploring different 
-datasets. The visualizations cover a range of topics and languages, including R and Python.
+datasets. The visualisations cover a range of topics and languages, including R and Python.
 
 ## Geospatial Visualisations
 
 ####  1. Exploring London house prices and and average income by borough
 
 These plots explore the relationship between average house prices and average income across different boroughs in 
-London. The visualizations use geospatial data to represent the variations in house prices and income levels 
+London. The visualisations use geospatial data to represent the variations in house prices and income levels 
 geographically, and use them to derive insights about affordability and economic disparities in London. I used
-two techniques to create these visualizations, one is a bivariate choropleth map plotting both variables at the same
+two techniques to create these visualisations, one is a bivariate choropleth map plotting both variables at the same
 time (the one to the left) and the other is a divergent color scale map plotting affordability.
 
 | ![](Geo_viz/London_houses_4.png) | ![](Geo_viz/london_houses_2.png) |
