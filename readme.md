@@ -25,3 +25,11 @@ the locations of his shots on the basketball court, with different colors indica
 The visualization provides insights into Curry's shooting patterns and effectiveness from various areas on the court.
 
 ![](Sports_viz/curry_shot.png)
+
+## TidyTuesday
+
+#### Languages in Africa
+
+This visualization explores the most spoken languages in Africa by number of native speakers. The bar chart highlights Arabic as the dominant language with 150 million native speakers, which is more than 3 times the second most spoken language. The accompanying map shows the geographic distribution of Arabic-speaking countries across the African continent, demonstrating its widespread presence particularly in North and East Africa.
+
+![](TidyTuesday/languages_in_africa.png)
