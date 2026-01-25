@@ -182,4 +182,7 @@ library(patchwork)
 # Combine plots with p2 in the bottom right & save:
 p1 + inset_element(p2, left = 0.30, bottom = 0, right = 1, top = 0.80)->p3
 p3
-ggsave("languages_in_africa.png", plot = p3, width = 14, height = 10, dpi = 300)
+
+#########
+## FIN ##
+#########

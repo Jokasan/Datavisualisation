@@ -147,7 +147,8 @@ curry_plot <- geom_basketball("nba", display_range = "offense", rotation = 270,
   theme(
     legend.position = "bottom",
     legend.box.margin = margin(t = -90, r = 0, b = 0, l = 0)
-  )
+  ) +
+  labs(caption = "Source: NBA via hoopR package")
 
 # Combine title with image, then stack with main plot
 (title_plot + img_plot + plot_layout(widths = c(4, 3))) / curry_plot + 
