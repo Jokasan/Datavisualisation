@@ -13,12 +13,16 @@ library(showtext)
 library(ggtext)
 library(glue)
 library(rnaturalearth)
+library(patchwork)
 
 # Some cool fonts:
 font_add_google("Oswald")
 font_add_google("Nunito")
+font_add_google("Domine")
+font_add_google("Open Sans")
 showtext_auto()
-title_font <- "Oswald"
+title_font <- "Domine"
+subtitle_font <- "Open Sans"
 body_font <- "Nunito"
 
 library(tidyverse)
@@ -48,7 +52,7 @@ ggplot(top_languages, aes(x = native_speakers_millions, y = language, fill = is_
     fontface = "bold"
   ) +
   scale_fill_manual(
-    values = c("FALSE" = "lightgrey", "TRUE" = "orange"),
+    values = c("FALSE" = "lightgrey", "TRUE" = "#FBBF77"),
     guide = "none"
   ) +
   scale_x_continuous(
@@ -65,8 +69,8 @@ ggplot(top_languages, aes(x = native_speakers_millions, y = language, fill = is_
   ) +
   theme_minimal(base_size = 16) +
   theme(
-    plot.title = element_text(face = "bold", size = 22, margin = margin(b = 10)),
-    plot.subtitle = element_text(color = "#666666", size = 16, margin = margin(b = 15)),
+    plot.title = element_text(face = "bold", size = 22, margin = margin(b = 10), hjust = 0.16, family = "Domine"),
+    plot.subtitle = element_text(color = "#666666", size = 16, margin = margin(b = 10), hjust = 0.16, family = "Open Sans"),
     plot.caption = element_text(size = 12, hjust = 1, margin = margin(t = 10)),
     plot.margin = margin(15, 15, 15, 35),
     panel.grid.major.y = element_blank(),
@@ -74,7 +78,8 @@ ggplot(top_languages, aes(x = native_speakers_millions, y = language, fill = is_
     panel.grid.major.x = element_blank(),
     axis.text.y = element_text(size = 14, hjust = 1),
     axis.text.x = element_blank(),
-    axis.title.x = element_text(size = 14, margin = margin(t = 5))
+    axis.title.x = element_text(size = 14, margin = margin(t = 5)),
+    plot.title.position = "plot"
   ) ->p1
 
 # Prepare visualisation 2:
@@ -83,7 +88,7 @@ ggplot(top_languages, aes(x = native_speakers_millions, y = language, fill = is_
 
 bg_col <- "white"
 text_col <- "#151C28"
-highlight_col <- "orange"
+highlight_col <- "#FBBF77"
 
 
 top_10 <- africa |> 
@@ -177,7 +182,6 @@ ggplot() +
     panel.grid.minor = element_blank()
   ) ->p2
 
-library(patchwork)
 
 # Combine plots with p2 in the bottom right & save:
 p1 + inset_element(p2, left = 0.30, bottom = 0, right = 1, top = 0.80)->p3
