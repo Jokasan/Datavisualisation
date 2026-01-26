@@ -58,7 +58,7 @@ ggplot(top_languages, aes(x = native_speakers_millions, y = language, fill = is_
   ) +
   labs(
     title = "Arabic Dominates Language Speakers in Africa",
-    subtitle = "150 Million Arabic speakers, more than 3x the second most spoken language",
+    subtitle = "150 million speakers, almost 3x the second most spoken language",
     x = NULL,
     y = NULL,
     caption = "Source: TidyTuesday 2026-01-13"
