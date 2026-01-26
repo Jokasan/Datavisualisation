@@ -62,15 +62,19 @@ ggplot(top_languages, aes(x = native_speakers_millions, y = language, fill = is_
   ) +
   labs(
     title = "Arabic Dominates Language Speakers in Africa",
-    subtitle = "150 million speakers, almost 3x the second most spoken language",
+    subtitle = "Almost 3x the second most spoken language",
     x = NULL,
     y = NULL,
     caption = "Source: TidyTuesday 2026-01-13"
   ) +
-  theme_minimal(base_size = 16) +
+  theme_minimal() +
   theme(
-    plot.title = element_text(face = "bold", size = 22, margin = margin(b = 10), hjust = 0.16, family = "Domine"),
-    plot.subtitle = element_text(color = "#666666", size = 16, margin = margin(b = 10), hjust = 0.16, family = "Open Sans"),
+    plot.title = element_text(face = "bold", size = 15,
+     #margin = margin(b = 10), hjust = 0.14, 
+     family = "Domine"),
+    plot.subtitle = element_text(color = "#666666", size = 13, 
+    #margin = margin(b = 10), hjust = 0.14,
+    family = "Open Sans"),
     plot.caption = element_text(size = 12, hjust = 1, margin = margin(t = 10)),
     plot.margin = margin(15, 15, 15, 35),
     panel.grid.major.y = element_blank(),
@@ -79,8 +83,7 @@ ggplot(top_languages, aes(x = native_speakers_millions, y = language, fill = is_
     axis.text.y = element_text(size = 14, hjust = 1),
     axis.text.x = element_blank(),
     axis.title.x = element_text(size = 14, margin = margin(t = 5)),
-    plot.title.position = "plot"
-  ) ->p1
+    plot.title.position = "plot")->p1
 
 # Prepare visualisation 2:
 # Reused the function created by nrenie @https://github.com/nrennie/tidytuesday/tree/main/2026/2026-01-13
@@ -163,7 +166,7 @@ ggplot() +
   theme_void(base_size = 10, base_family = body_font) +
   theme(
     plot.margin = margin(5, 5, 5, 5),
-   plot.caption.position = "plot",
+    plot.caption.position = "plot",
     plot.background = element_rect(fill = bg_col, colour = bg_col),
     panel.background = element_rect(fill = bg_col, colour = bg_col),
     plot.tag = element_textbox_simple(
@@ -179,12 +182,11 @@ ggplot() +
       margin = margin(t = 5, b = 5),
       size = rel(0.9)
     ),
-    panel.grid.minor = element_blank()
-  ) ->p2
+    panel.grid.minor = element_blank()) ->p2
 
 
 # Combine plots with p2 in the bottom right & save:
-p1 + inset_element(p2, left = 0.30, bottom = 0, right = 1, top = 0.80)->p3
+p1 + inset_element(p2, left = 0.35, bottom = 0, right = 1, top = 0.80)->p3
 p3
 
 #########
