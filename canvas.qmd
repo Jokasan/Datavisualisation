@@ -18,9 +18,7 @@ editor: source
 This is a quarto notebook for enabling you to develop visualisations properly. You can
 override them at the chunk level.
 
-
 # Exporting
-
 
 ```{r}
 #| eval: false
