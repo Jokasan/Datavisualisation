@@ -1,7 +1,7 @@
 ---
 title: "Canvas"
-author: "Nils Indreiten
-format: hmtl
+author: "Nils Indreiten"
+format: html
 reference-location: margin
 knitr:
   opts_chunk:
@@ -15,4 +15,18 @@ execute:
 editor: source
 ---
 
-This is a quarto notebook for enabling you to develop visualisations properly.
+This is a quarto notebook for enabling you to develop visualisations properly. You can
+override them at the chunk level.
+
+
+# Exporting
+
+
+```{r}
+#| eval: false
+ggsave("plots/",width=7,height=4,dpi=120)
+ggsave("plots/",width=7,height=4,dpi=600)
+
+# Transparent background:
+ggsave("plots/",width,height,bg="transparent")
+```
