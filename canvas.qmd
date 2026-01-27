@@ -1,0 +1,18 @@
+---
+title: "Canvas"
+author: "Nils Indreiten
+format: hmtl
+reference-location: margin
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+    dpi: 300
+execute:
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6.3
+editor: source
+---
+
+This is a quarto notebook for enabling you to develop visualisations properly.
