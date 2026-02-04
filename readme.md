@@ -10,5 +10,5 @@ This repository contains various data visualization projects. [Some of them are 
 datasets. The visualisations cover a range of topics and languages, including R, Python and
 Javascript.
 
-![](https://specials-images.forbesimg.com/dam/imageserve/955572446/960x0.jpg?fit=scale)
+![](https://www.datameer.com/wp-content/uploads/2019/12/Data-Vizualisation-924x512.png)
 
