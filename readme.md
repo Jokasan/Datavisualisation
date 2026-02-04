@@ -4,5 +4,5 @@ This repository contains various data visualization projects. [Some of them are 
 datasets. The visualisations cover a range of topics and languages, including R, Python and
 Javascript.
 
-![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MVMtfTeAU947i_I8bnv64w.gif)
+![](https://specials-images.forbesimg.com/dam/imageserve/955572446/960x0.jpg?fit=scale)
 
