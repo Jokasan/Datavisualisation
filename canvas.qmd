@@ -23,6 +23,7 @@ override them at the chunk level.
 ```{r}
 #| eval: false
 ggsave("plots/",width=7,height=4,dpi=120)
+ggsave("plots/",width=7,height=4,dpi=300) # Best practice dpi
 ggsave("plots/",width=7,height=4,dpi=600)
 
 # Transparent background:
