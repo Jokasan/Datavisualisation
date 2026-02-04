@@ -8,5 +8,5 @@ geographically, and use them to derive insights about affordability and economic
 two techniques to create these visualisations, one is a bivariate choropleth map plotting both variables at the same
 time (the one to the left) and the other is a divergent color scale map plotting affordability.
 
-| ![](Geo_viz/London_houses_4.png) | ![](Geo_viz/london_houses_2.png) |
+| ![](London_houses_4.png) | ![](london_houses_2.png) |
 |:---:|:---:|
