@@ -11,4 +11,3 @@ datasets. The visualisations cover a range of topics and languages, including R,
 Javascript.
 
 ![](https://www.datameer.com/wp-content/uploads/2019/12/Data-Vizualisation-924x512.png)
-
