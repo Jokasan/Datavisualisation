@@ -21,6 +21,11 @@ override them at the chunk level.
 # Exporting
 
 ```{r}
+library(tidyverse)
+
+```
+
+```{r}
 #| eval: false
 ggsave("plots/",width=7,height=4,dpi=120)
 ggsave("plots/",width=7,height=4,dpi=600)

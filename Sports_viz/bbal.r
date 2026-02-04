@@ -7,7 +7,6 @@
 ######################################
 
 # Load packages:
-# devtools::install_github("ys-xue/ggbasketball")
 pacman::p_load(hoopR, skimr, tidyverse, sportyR, devtools, ggbasketball, patchwork, magick)
 
 # Retrieve data:
