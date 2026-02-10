@@ -21,15 +21,8 @@ override them at the chunk level.
 # Exporting
 
 ```{r}
-# library(tidyverse)
-# library(tidyverse)
-# library(ggtext)
-
-# tuesdata <- tidytuesdayR::tt_load('date')
-# df <- tuesdata$object
-
+library(tidyverse)
 ```
-
 
 ```{r}
 #| eval: false
