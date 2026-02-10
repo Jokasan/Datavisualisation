@@ -10,4 +10,4 @@ This repository contains various data visualization projects. [Some of them are 
 datasets. The visualisations cover a range of topics and languages, including R, Python and
 Javascript.
 
-![](https://www.datameer.com/wp-content/uploads/2019/12/Data-Vizualisation-924x512.png)
+![](https://boostlabs.com/wp-content/uploads/2023/02/10-types-of-data-visualization-1.jpg)
