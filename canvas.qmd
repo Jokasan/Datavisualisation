@@ -22,8 +22,14 @@ override them at the chunk level.
 
 ```{r}
 library(tidyverse)
+library(tidyverse)
+library(ggtext)
+
+# tuesdata <- tidytuesdayR::tt_load('date')
+# df <- tuesdata$object
 
 ```
+
 
 ```{r}
 #| eval: false

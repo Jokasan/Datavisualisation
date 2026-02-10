@@ -14,3 +14,12 @@ land monitoring. It contains information on 146 edible plant species, including 
 growing conditions and time to harvest and germination.
 
 ![](soil_ph_tolerance.png)
+
+
+### Winter Olympics 2026
+
+This visualisation explored the Winter Olympics 2026 opening weekend schedule in Milan-Cortina, Italy. The dataset contains 
+detailed information about all 1,866 Olympic events, including both competition and training sessions across various winter 
+sport disciplines.
+
+![](milano_cortina_schedule.png)
