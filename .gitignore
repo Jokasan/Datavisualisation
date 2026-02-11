@@ -103,6 +103,7 @@ Desktop.ini
 
 # VS Code
 .vscode/
+.claude 
 
 # Backup files
 *~
