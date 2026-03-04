@@ -10,8 +10,8 @@ knitr:
 execute:
   warning: false
   message: false
-  fig-width: 10
-  fig-height: 6.3
+  fig-width: 7
+  fig-height: 6
 editor: source
 ---
 
