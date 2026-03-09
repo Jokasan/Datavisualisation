@@ -91,7 +91,7 @@ p1 <- ggplot(
     y = "Straight Carapace Length (mm)",
     caption = "Data: Bonnet et al. (2026) Ecology Letters · TidyTuesday: 2026-03-03"
   ) +
-  # Theme
+
   theme_minimal(base_size = 12, "Rethink Sans") +
   theme(
     plot.background     = element_rect(fill = col_bg, colour = NA),
