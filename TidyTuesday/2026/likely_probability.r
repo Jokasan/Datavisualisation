@@ -141,11 +141,11 @@ p <- ggplot(phrase_stats) +
            size = 3.0, hjust = 0.5) +
 
   annotate("text", x = -2, y = n_phrases - 0.01,
-           label = "most contested word", colour = "#FF7B6B",
+           label = "most contested phrase", colour = "#FF7B6B",
            family = "rethink", size = 2.7, hjust = 0,
            fontface = "italic") +
   annotate("text", x = -2, y = 1 + 0.01,
-           label = "most agreed word", colour = "#69C3A2",
+           label = "most agreed phrase", colour = "#69C3A2",
            family = "rethink", size = 2.7, hjust = 0,
            fontface = "italic") +
 
@@ -185,8 +185,7 @@ p <- ggplot(phrase_stats) +
 
   labs(
     title    = "Some words are precise. Others are a gamble.",
-    subtitle = "In an online quiz, 5,000+ participants assigned a 0–100% probability to each of 19 common phrases (e.g. 'Likely', 'Probable'), to determine\nwhich conveys the most probability. Using the standard deviation of the assigned probability, Realistic Possibility is the most contested\nphrase, whilst About Even is the most agreed upon phrase.",
-
+    subtitle = "In an online quiz, 5,000+ participants assigned a 0–100% probability to each of 19 common phrases (e.g. 'Likely', 'Probable'), to determine\nwhich conveys the most probability. Using the standard deviation of the assigned probability, Realistic Possibility provoked the most\ndisagreement, whilst About Even was the most consistently interpreted.",
     caption  = "Data: Adam Kucharski / kucharski.io  •  #TidyTuesday: 2026-03-10",
     x        = "Probability assigned by respondents  (0% → 100%)",
     y        = NULL
