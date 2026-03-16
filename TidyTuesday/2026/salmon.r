@@ -143,7 +143,7 @@ p3b <- ggplot(norway_yearly) +
  
   labs(
     title    = "Where Mortality Hits Hardest",
-    subtitle = "Salmon quality of life in aquaculture farming has received more attention over the years in Norway.\nIncreased average mortality is higher in the west coast of the country, particularly in the Vestland\nregion, where the mortality is highest 3 of the 6 years in the dataset. Grey zones have no aquaculture data.",
+    subtitle = "Salmon quality of life in aquaculture farming has received more attention over the years in Norway.\nIncreased average mortality is higher in the west coast of the country, particularly in the Vestland\nregion, where the mortality is highest 3 out of the 6 years in the dataset. Grey zones have no aquaculture data.",
     caption  = "Source: Norwegian Veterinary Institute \u2022 #TidyTuesday: 2026-03-17"
   ) +
   theme_minimal(base_family = "rethink", base_size = 15) +
