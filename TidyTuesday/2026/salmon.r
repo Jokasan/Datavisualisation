@@ -25,7 +25,7 @@ showtext_auto()
 
 # Do some wrangling and preparation:
 
-salmon_county_yr <- mortality |>
+salmon_county_yr <- monthly_mortality_data |>
   filter(species == "salmon", geo_group == "county") |>
   mutate(year = year(date)) |>
   group_by(region, year) |>
@@ -112,7 +112,7 @@ p3b <- ggplot(norway_yearly) +
   geom_text(
     data = anno,
     aes(x = x_end, y = y_end, label = label, colour = anno_colour),
-    size = 5, family = "rethink", fontface = "bold",
+    size = 5.5, family = "rethink", fontface = "bold",
     hjust = 0, vjust = 0.5, lineheight = 0.3,
     inherit.aes = FALSE,
   ) +
@@ -126,7 +126,8 @@ p3b <- ggplot(norway_yearly) +
   scale_fill_gradientn(
     colours  = c("#2A9D8F", "#E9C46A", "#E76F51", "#8B1A1A"),
     na.value = "grey92",
-    limits   = c(0, 1),
+    limits   = c(0.20, 1),
+    breaks   = c(seq(0.20, 0.80, by = 0.20), 1.0),
     labels   = scales::percent_format(accuracy = 1, scale = 100),
     name     = "Average monthly Salmon mortality (%)",
     guide    = guide_colorbar(
@@ -142,7 +143,7 @@ p3b <- ggplot(norway_yearly) +
  
   labs(
     title    = "Where Mortality Hits Hardest",
-    subtitle = "Salmon quality of life in aquaculture farming has received more attention over the years in Norway. Increased average mortality is higher in the west coast of the country, particularly in the Vestland region, where the mortality is highest 3 of the 6 years in the dataset, grey zones have no aquaculture data.",
+    subtitle = "Salmon quality of life in aquaculture farming has received more attention over the years in Norway.\nIncreased average mortality is higher in the west coast of the country, particularly in the Vestland\nregion, where the mortality is highest 3 of the 6 years in the dataset. Grey zones have no aquaculture data.",
     caption  = "Source: Norwegian Veterinary Institute \u2022 #TidyTuesday: 2026-03-17"
   ) +
   theme_minimal(base_family = "rethink", base_size = 15) +
@@ -152,14 +153,15 @@ p3b <- ggplot(norway_yearly) +
       size =30,
       family = "domine", face = "bold",
       hjust  = 0.5),
-    plot.subtitle = element_textbox_simple(
-      size       = 20,
-      colour     = "grey40",
-      family     = "rethink",
-      halign     = 0.5,
-      lineheight = 0.5,
-      margin     = margin(t = 0, b = 10)
-    ),
+      plot.subtitle = element_text(
+        size = 25,
+        colour = "grey40",
+        family = "rethink",
+        hjust = 0.5,
+        lineheight = 0.4,
+        margin = margin(t = 1, b = 8)
+      ),
+
     plot.caption  = element_text(
       size   = 20,
       colour = "grey55",
