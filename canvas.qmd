@@ -23,7 +23,6 @@ override them at the chunk level.
 ```{r}
 library(tidyverse)
 ```
-
 ```{r}
 #| eval: false
 ggsave("plots/",width=7,height=4,dpi=120)

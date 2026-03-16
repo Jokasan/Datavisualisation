@@ -38,3 +38,9 @@ the plateau.
 In an online quiz, created as an independent project by Adam Kucharski, over 5,000 participants compared pairs of probability phrases (e.g. "Which conveys a higher probability: Likely or Probable?") and assigned numerical values (0–100%) to each of 19 phrases. This visualisation ranks all 19 phrases by how much respondents disagreed, using the standard deviation of assigned probabilities. *Realistic Possibility* provoked the most disagreement, while *About Even* was the most consistently interpreted.
 
 ![](likely.png)
+
+#### Norwegian Salmon Mortality
+
+This visualisation maps average monthly salmon mortality across Norwegian counties from 2020 to 2025, using data from the Norwegian Veterinary Institute. A faceted choropleth highlights regional differences, with the west coast — particularly Vestland — consistently recording the highest mortality rates. Annotations identify the worst-affected county in each year.
+
+![](salmon_by_year.png)
