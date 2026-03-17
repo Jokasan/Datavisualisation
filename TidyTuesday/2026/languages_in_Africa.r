@@ -16,14 +16,11 @@ library(rnaturalearth)
 library(patchwork)
 
 # Some cool fonts:
-font_add_google("Oswald")
-font_add_google("Nunito")
-font_add_google("Domine")
-font_add_google("Open Sans")
+
+font_add_google("Domine", "domine")
+font_add_google("Rethink Sans", "rethink")
 showtext_auto()
-title_font <- "Domine"
-subtitle_font <- "Open Sans"
-body_font <- "Nunito"
+
 
 library(tidyverse)
 
@@ -48,7 +45,7 @@ ggplot(top_languages, aes(x = native_speakers_millions, y = language, fill = is_
   geom_text(
     aes(label = paste0(round(native_speakers_millions), "M")),
     hjust = -0.1,
-    size = 6,
+    size = 16,
     fontface = "bold"
   ) +
   scale_fill_manual(
@@ -69,20 +66,20 @@ ggplot(top_languages, aes(x = native_speakers_millions, y = language, fill = is_
   ) +
   theme_minimal() +
   theme(
-    plot.title = element_text(face = "bold", size = 15,
+    plot.title = element_text(face = "bold", size = 48,
      #margin = margin(b = 10), hjust = 0.14, 
-     family = "Domine"),
-    plot.subtitle = element_text(color = "#666666", size = 13, 
+    family = "Domine"),
+    plot.subtitle = element_text(color = "#666666", size = 34, 
     #margin = margin(b = 10), hjust = 0.14,
-    family = "Open Sans"),
-    plot.caption = element_text(size = 12, hjust = 1, margin = margin(t = 10)),
+    family = "rethink"),
+    plot.caption = element_text(size = 24, hjust = 1, margin = margin(t = 10)),
     plot.margin = margin(15, 15, 15, 35),
     panel.grid.major.y = element_blank(),
     panel.grid.minor = element_blank(),
     panel.grid.major.x = element_blank(),
-    axis.text.y = element_text(size = 14, hjust = 1),
+    axis.text.y = element_text(size = 32, hjust = 1),
     axis.text.x = element_blank(),
-    axis.title.x = element_text(size = 14, margin = margin(t = 5)),
+    axis.title.x = element_text(size = 32, margin = margin(t = 5)),
     plot.title.position = "plot")->p1
 
 # Prepare visualisation 2:
@@ -148,7 +145,7 @@ plot_data <- map(
     )
   )
 
-title <- glue("<span style='font-family:{title_font}; font-size: 20pt;'>**Arabic is the most widely spoken language in Africa**</span>")
+title <- glue("<span style='font-family:{title_font}; font-size: 48pt;'>**Arabic is the most widely spoken language in Africa**</span>")
 st <- "Top 10 most widely spoken languages in Africa by number of native speakers"
 cap <- paste0(
   title, "<br>", st, "<br><br>",
@@ -160,10 +157,11 @@ ggplot() +
     data = plot_data |> 
       filter(language == "**Arabic**<br>150 million native speakers"),
     mapping = aes(fill = fill),
-    colour = bg_col
+    colour = bg_col,
+    linewidth = 0.15
   ) +
   scale_fill_identity() +
-  theme_void(base_size = 10, base_family = body_font) +
+  theme_void(base_size = 45, base_family = "Domine") +
   theme(
     plot.margin = margin(5, 5, 5, 5),
     plot.caption.position = "plot",
@@ -174,7 +172,7 @@ ggplot() +
       hjust = 0,
       halign = 0,
       margin = margin(b = 5, t = 5),
-      family = body_font,
+      family = "Domine",
       maxwidth = 0.5
     ),
     plot.tag.position = c(0.55, 0.15),
@@ -188,6 +186,8 @@ ggplot() +
 # Combine plots with p2 in the bottom right & save:
 p1 + inset_element(p2, left = 0.35, bottom = 0, right = 1, top = 0.80)->p3
 p3
+
+ggsave("TidyTuesday/2026/languages_in_africa.png", p3, width = 7, height = 6, dpi = 300, bg = "white")
 
 #########
 ## FIN ##
