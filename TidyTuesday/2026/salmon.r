@@ -112,7 +112,7 @@ p3b <- ggplot(norway_yearly) +
   geom_text(
     data = anno,
     aes(x = x_end, y = y_end, label = label, colour = anno_colour),
-    size = 5.5, family = "rethink", fontface = "bold",
+    size = 5.3, family = "rethink", fontface = "bold",
     hjust = 0, vjust = 0.5, lineheight = 0.3,
     inherit.aes = FALSE,
   ) +
@@ -127,8 +127,8 @@ p3b <- ggplot(norway_yearly) +
     palette  = "Reds",
     direction = 1,
     na.value = "grey92",
-    limits   = c(0.30, 1),
-    breaks   = c(seq(0.30, 0.80, by = 0.20), 1.0),
+    limits   = c(0.20, 1),
+    breaks   = seq(0.20, 1.0, by = 0.20),
     labels   = scales::percent_format(accuracy = 1, scale = 100),
     name     = "Average monthly Salmon mortality (%)",
     guide    = guide_colorbar(
