@@ -90,7 +90,7 @@ anno <- salmon_county_yr |>
     y_end  = 65,
 
     anno_colour = scales::col_numeric(
-      palette = c("#2A9D8F", "#E9C46A", "#E76F51", "#8B1A1A"),
+      palette = RColorBrewer::brewer.pal(9, "Reds"),
       domain  = c(0, 1)
     )(avg_median)
   )
@@ -102,7 +102,7 @@ p3b <- ggplot(norway_yearly) +
 
   geom_curve(
     data = anno,
-    aes(x = x_end+4.5, y = y_end-0.5, xend = x, yend = y),
+    aes(x = x_end+4.5, y = y_end-0.6, xend = x, yend = y),
     arrow = arrow(length = unit(0.15, "cm"), type = "closed"),
     curvature = -0.25,
     colour = "grey20", 
@@ -123,11 +123,12 @@ p3b <- ggplot(norway_yearly) +
            ylim = c(bbox["ymin"], bbox["ymax"]),
            expand = FALSE) +
  
-  scale_fill_gradientn(
-    colours  = c("#2A9D8F", "#E9C46A", "#E76F51", "#8B1A1A"),
+  scale_fill_distiller(
+    palette  = "Reds",
+    direction = 1,
     na.value = "grey92",
-    limits   = c(0.20, 1),
-    breaks   = c(seq(0.20, 0.80, by = 0.20), 1.0),
+    limits   = c(0.30, 1),
+    breaks   = c(seq(0.30, 0.80, by = 0.20), 1.0),
     labels   = scales::percent_format(accuracy = 1, scale = 100),
     name     = "Average monthly Salmon mortality (%)",
     guide    = guide_colorbar(
