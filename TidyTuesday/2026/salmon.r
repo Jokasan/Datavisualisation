@@ -130,7 +130,7 @@ p3b <- ggplot(norway_yearly) +
     limits   = c(0.20, 1),
     breaks   = seq(0.20, 1.0, by = 0.20),
     labels   = scales::percent_format(accuracy = 1, scale = 100),
-    name     = "Average monthly Salmon mortality (%)",
+    name     = "Average Median Monthly Salmon mortality (%)",
     guide    = guide_colorbar(
       barwidth       = 15,
       barheight      = 0.2,
@@ -151,7 +151,7 @@ p3b <- ggplot(norway_yearly) +
   theme(
     plot.title.position = "plot",
     plot.title    = element_text(
-      size =38,
+      size =40,
       family = "domine", face = "bold",
       hjust  = 0.5),
       plot.subtitle = element_text(
@@ -160,7 +160,7 @@ p3b <- ggplot(norway_yearly) +
         family = "rethink",
         hjust = 0.5,
         lineheight = 0.4,
-        margin = margin(t = 1, b = 8)
+        margin = margin(t = 0.1, b = 5)
       ),
 
     plot.caption  = element_text(
@@ -189,4 +189,4 @@ p3b <- ggplot(norway_yearly) +
     plot.margin          = margin(8, 6, 6, 6)
   )
  
-ggsave("salmon_by_year.png", p3b, width = 7, height = 6, dpi = 300, bg = "white")
+ggsave("TidyTuesday/2026/salmon_by_year.png", p3b, width = 7, height = 6, dpi = 300, bg = "white")
