@@ -52,4 +52,4 @@ plot the data by day over a 4 year period to get a sense of the temperature wate
 throughout the year. The warmer temperatures reach lower depths and remain there for 
 longer throughout the year, when compared to previous years.
 
-![](ocean_temperature.png)
+![](ocean_temp.png)
