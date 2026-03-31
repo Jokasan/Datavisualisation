@@ -11,7 +11,7 @@ execute:
   warning: false
   message: false
   fig-width: 7
-  fig-height: 6
+  fig-height: 10
 editor: source
 ---
 
@@ -23,6 +23,7 @@ override them at the chunk level.
 ```{r}
 library(tidyverse)
 ```
+
 ```{r}
 #| eval: false
 ggsave("plots/",width=7,height=4,dpi=120)

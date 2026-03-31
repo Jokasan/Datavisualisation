@@ -44,3 +44,12 @@ In an online quiz, created as an independent project by Adam Kucharski, over 5,0
 This visualisation maps average monthly salmon mortality across Norwegian counties from 2020 to 2025, using data from the Norwegian Veterinary Institute. A faceted choropleth highlights regional differences, with the west coast — particularly Vestland — consistently recording the highest mortality rates. Annotations identify the worst-affected county in each year.
 
 ![](salmon_by_year.png)
+
+#### Ocean Temperature Anomalies
+
+This visualisation shows ocean temperatures over time from Birchy Head, Nova Scotia. We
+plot the data by day over a 4 year period to get a sense of the temperature waters 
+throughout the year. The warmer temperatures reach lower depths and remain there for 
+longer throughout the year, when compared to previous years.
+
+![](ocean_temperature.png)
