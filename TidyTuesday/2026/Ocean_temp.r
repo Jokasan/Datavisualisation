@@ -78,7 +78,7 @@ heatmap <- ggplot(
 
   labs(
     title = "4 Years Beneath the Surface",
-    subtitle = "Daily mean ocean temperature at Birchy Head, Nova Scotia, by ocean sensor depth.\nWarmer tempertaures seep to ocean depths and are lasting longer into the year.",
+    subtitle = "Daily mean ocean temperature at Birchy Head, Nova Scotia, by ocean sensor depth.\nWarmer temperatures seep to ocean depths and are lasting longer into the year.",
     x = NULL,
     y = NULL,
     caption = "Data: Centre for Marine Applied Research · Coastal Monitoring Program | #TidyTuesday 2026-03-31"
