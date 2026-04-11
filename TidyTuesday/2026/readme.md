@@ -53,3 +53,10 @@ throughout the year. The warmer temperatures reach lower depths and remain there
 longer throughout the year, when compared to previous years.
 
 ![](ocean_temp.png)
+
+
+#### Repair Café Growth
+
+This visualisation explores the growth of the Repair Café movement across different countries. The plot shows the annual number of logged repairs for the six most active countries from 2015 to 2025, highlighting the surge in repair activities and the increasing popularity of the movement. Netherlands comes out on top! 
+
+![](repair_growth_by_country.png)

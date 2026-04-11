@@ -26,10 +26,10 @@ library(tidyverse)
 
 ```{r}
 #| eval: false
-ggsave("plots/",width=7,height=4,dpi=120)
-ggsave("plots/",width=7,height=4,dpi=300) # Best practice dpi
-ggsave("plots/",width=7,height=4,dpi=600)
+ggsave("plots/", width = 7, height = 4, dpi = 120)
+ggsave("plots/", width = 7, height = 4, dpi = 300) # Best practice dpi
+ggsave("plots/", width = 7, height = 4, dpi = 600)
 
 # Transparent background:
-ggsave("plots/",width,height,bg="transparent")
+ggsave("plots/", width, height, bg = "transparent")
 ```
