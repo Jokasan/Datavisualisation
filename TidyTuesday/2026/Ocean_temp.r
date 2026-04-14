@@ -38,7 +38,8 @@ plot_data <- ocean_temperature %>%
       levels = paste0(sort(unique(sensor_depth_at_low_tide_m)), " m")
     )),
     year_fct = factor(year)
-  )
+  ) |>
+  complete(day_of_year, depth_fct, year_fct)
 
 # Plot:
 
@@ -46,6 +47,13 @@ heatmap <- ggplot(
   plot_data,
   aes(x = day_of_year, y = depth_fct, fill = mean_temperature_degree_c)
 ) +
+  geom_tile(
+    data = ~ filter(.x, is.na(mean_temperature_degree_c)),
+    fill = "lightgrey",
+    alpha = 0.3,
+    width = 1,
+    height = 0.9
+  ) +
   geom_tile(width = 1, height = 0.9) +
 
   facet_wrap(~year_fct, ncol = 1, strip.position = "top") +
@@ -59,6 +67,7 @@ heatmap <- ggplot(
       "#E17C05",
       "#CC503E"
     ),
+    na.value = "transparent",
     name = "Mean Temp (°C)",
     breaks = seq(0, 25, 5),
     labels = scales::label_number(suffix = "°C"),
@@ -78,7 +87,7 @@ heatmap <- ggplot(
 
   labs(
     title = "4 Years Beneath the Surface",
-    subtitle = "Daily mean ocean temperature at Birchy Head, Nova Scotia, by ocean sensor depth.\nWarmer temperatures seep to ocean depths and are lasting longer into the year.",
+    subtitle = "Daily mean ocean temperature at Birchy Head, Nova Scotia, by ocean sensor depth.\nWarmer temperatures seep to ocean depths and are lasting longer into the year. Light grey tiles indicate missing data.",
     x = NULL,
     y = NULL,
     caption = "Data: Centre for Marine Applied Research · Coastal Monitoring Program | #TidyTuesday 2026-03-31"
