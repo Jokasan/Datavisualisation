@@ -66,3 +66,9 @@ This visualisation explores the growth of the Repair Café movement across diffe
 This visualisation explores bird sightings at sea, showing the distribution and patterns of marine bird observations. The plot provides insights into species occurrence, sighting frequencies, and spatial patterns across different oceanic regions.
 
 ![](bird_sea_sighting.png)
+
+#### Health Spending in the G7
+
+This visualisation explores health spending in the G7 countries, showing the domestic health expenditure as a percentage of current health expenditure. The plot provides insights into the trends and comparisons among the G7 nations over time, between 200 and 2023.
+
+![](g7_bump_chart.png)
