@@ -97,7 +97,7 @@ p1 <- ggplot(
     ymin = 0.4,
     ymax = 7.6,
     fill = "indianred",
-    alpha = 0.2,
+    alpha = 0.1,
     colour = NA
   ) +
   annotate(
@@ -148,7 +148,7 @@ p1 <- ggplot(
     ),
     hjust = 1,
     nudge_x = -0.8,
-    size = 8,
+    size = 9,
     fontface = "bold",
     family = "rethink",
     inherit.aes = FALSE
@@ -179,11 +179,11 @@ p1 <- ggplot(
 
   scale_y_reverse(
     breaks = 1:7,
-    expand = expansion(add = 0.65)
+    expand = expansion(add = c(-1, 0.65))
   ) +
 
   labs(
-    title = "Domestic health spending as a percentage of current health expenditure in the G7",
+    title = "Domestic health spending as a percentage of total health expenditure in the G7",
     subtitle = "Japan consistently remains committed to government health financing\nwhile the USA's share is consistently lowest",
     x = NULL,
     y = NULL,
@@ -205,7 +205,7 @@ p1 <- ggplot(
       colour = "grey40",
       lineheight = .4,
       hjust = 0.5,
-      margin = margin(b = -12)
+      margin = margin(b = -20)
     ),
     plot.background = element_rect(fill = "#FAFAF8", colour = NA),
     panel.grid.major.x = element_blank(),
@@ -216,6 +216,7 @@ p1 <- ggplot(
       face = "bold",
       colour = "grey30"
     ),
+    axis.ticks.length.x = unit(0, "pt"),
     axis.text.y = element_blank(),
     legend.position = "none",
     plot.caption = element_text(hjust = 0.5)
